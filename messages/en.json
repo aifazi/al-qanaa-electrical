@@ -1,0 +1,204 @@
+{
+  "Brand": {
+    "name": "Al Qanaa Electrical Repairing Workshop",
+    "sub": "Electrical & Appliance Repair"
+  },
+  "Nav": {
+    "services": "Services",
+    "why": "Why Us",
+    "process": "Process",
+    "reviews": "Reviews",
+    "area": "Service Area",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "tagline": "Free Diagnostic Check — All Appliances",
+    "headline": [
+      "Expert",
+      "Electrical",
+      "&",
+      "Appliance",
+      "Repair",
+      "in",
+      "Al",
+      "Ain"
+    ],
+    "subtitle": "Fast, reliable repairs for AC units, wiring, breakers and home appliances — backed by 200+ five-star reviews.",
+    "bookCta": "Book a Free Check"
+  },
+  "Common": {
+    "call": "Call",
+    "callNow": "Call Now",
+    "googleRating": "Google Rating",
+    "reviews": "reviews"
+  },
+  "Services": {
+    "title": "What We Repair",
+    "intro": "From a flickering light to a failed compressor, our technicians fix it all — same-day in most cases.",
+    "items": [
+      {
+        "title": "AC Repair & Service",
+        "desc": "Cooling problems, gas refill, filter cleaning and full split-unit servicing.",
+        "points": [
+          "Cooling & gas faults",
+          "Filter & coil cleaning",
+          "Annual maintenance"
+        ]
+      },
+      {
+        "title": "Breaker & Panel",
+        "desc": "Tripping breakers, burnt panels and safe distribution upgrades.",
+        "points": [
+          "Tripping diagnosis",
+          "Panel replacement",
+          "Load balancing"
+        ]
+      },
+      {
+        "title": "Wiring & Rewiring",
+        "desc": "Faulty sockets, short circuits and complete home rewiring.",
+        "points": [
+          "Socket & switch repair",
+          "Short-circuit fixes",
+          "Full rewiring"
+        ]
+      },
+      {
+        "title": "Appliance Repair",
+        "desc": "Fridges, washing machines, ovens and water heaters fixed fast.",
+        "points": [
+          "Fridge & freezer",
+          "Washer & dryer",
+          "Oven & heater"
+        ]
+      },
+      {
+        "title": "Emergency Callouts",
+        "desc": "Power loss and hazardous faults handled the same day.",
+        "points": [
+          "Power restoration",
+          "Hazard isolation",
+          "24h response"
+        ]
+      },
+      {
+        "title": "Maintenance Plans",
+        "desc": "Scheduled check-ups that prevent breakdowns before they happen.",
+        "points": [
+          "Periodic inspection",
+          "Priority booking",
+          "Warranty cover"
+        ]
+      }
+    ]
+  },
+  "Why": {
+    "title": "Why Al Qanaa",
+    "subtitle": "The trusted choice across Al Ain",
+    "para": "We pair honest pricing, certified technicians and genuine parts to get your home running safely again.",
+    "reviewsLabel": "verified Google reviews",
+    "trust": [
+      "Certified & experienced technicians",
+      "Free diagnostic check on every visit",
+      "Upfront pricing — no hidden fees",
+      "Genuine spare parts with warranty",
+      "Same-day service across Al Ain"
+    ],
+    "stats": [
+      { "label": "Happy customers" },
+      { "label": "Average rating" },
+      { "label": "Years of experience" },
+      { "label": "Avg. response time" }
+    ]
+  },
+  "Process": {
+    "title": "Our Process",
+    "subtitle": "Four simple steps to get back up and running.",
+    "steps": [
+      {
+        "title": "Book a Visit",
+        "desc": "Call or WhatsApp us and we schedule a same-day appointment."
+      },
+      {
+        "title": "Free Diagnosis",
+        "desc": "Our technician inspects the fault and explains it clearly."
+      },
+      {
+        "title": "Expert Repair",
+        "desc": "We fix it on the spot using genuine spare parts."
+      },
+      {
+        "title": "Test & Warranty",
+        "desc": "We verify the work and back it with a service warranty."
+      }
+    ]
+  },
+  "Reviews": {
+    "title": "What Customers Say",
+    "onGoogle": "on Google",
+    "items": [
+      {
+        "name": "Ahmed R.",
+        "location": "Zakhir, Al Ain",
+        "text": "Fixed my AC within an hour and explained everything. Very fair price."
+      },
+      {
+        "name": "Salma K.",
+        "location": "Al Jimi, Al Ain",
+        "text": "The free check caught a wiring fault before it became dangerous. Lifesavers."
+      },
+      {
+        "name": "Yousef M.",
+        "location": "Ramlat Zakher",
+        "text": "Same-day fridge repair and a real warranty. Honest and professional."
+      },
+      {
+        "name": "Noor A.",
+        "location": "Al Ain",
+        "text": "Breaker kept tripping — they found the cause and fixed it properly."
+      },
+      {
+        "name": "Khalid B.",
+        "location": "MBZ City",
+        "text": "Polite, punctual and priced exactly as quoted. Highly recommend."
+      },
+      {
+        "name": "Fatima S.",
+        "location": "Sweihan",
+        "text": "Washing machine repaired on the spot. Great communication throughout."
+      }
+    ]
+  },
+  "Area": {
+    "title": "We Serve Al Ain & Beyond",
+    "subtitle": "Prompt service across Al Ain, Abu Dhabi and nearby communities.",
+    "hours": "Sat – Thu, 8:00 AM – 8:00 PM",
+    "directions": "Directions",
+    "chips": [
+      "Al Ain",
+      "Zakhir",
+      "Ramlat Zakher",
+      "Al Jimi",
+      "Al Mesaimeer",
+      "Abu Dhabi",
+      "MBZ City",
+      "Sweihan"
+    ]
+  },
+  "Footer": {
+    "tagline": "Free diagnostic check and honest repairs for every home and business.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "follow": "Follow Us",
+    "rights": "© {year} Al Qanaa Electrical Repairing Workshop. Proudly serving {city}, {region}, {country}."
+  },
+  "Locale": {
+    "label": "Select language"
+  },
+  "Meta": {
+    "title": "Al Qanaa Electrical Repairing Workshop | AC, Wiring & Appliance Repair Al Ain",
+    "description": "Expert electrical and appliance repair in Al Ain & Abu Dhabi. Free diagnostic check, same-day service, 4.9★ from 200+ reviews. Call +971 52 327 6374.",
+    "ogTitle": "Al Qanaa — Electrical & Appliance Repair Al Ain",
+    "ogDescription": "Free diagnostic check, certified technicians and same-day repairs across Al Ain & Abu Dhabi."
+  }
+}

@@ -20,6 +20,9 @@
 !/Dockerfile
 !/docker-compose.yml
 !/next-env.d.ts
+!/middleware.ts
+!/i18n/
+!/messages/
 
 # Build / dependency artifacts
 node_modules/
