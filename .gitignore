@@ -1,0 +1,34 @@
+# Ignore everything at the repo root by default, then re-include
+# only the real project files. (The project lives in the user home dir,
+# so we must NOT commit home dotfiles like .bashrc / .gitconfig.)
+/*
+!/.gitignore
+!/.dockerignore
+!/app/
+!/components/
+!/lib/
+!/public/
+!/.github/
+!/package.json
+!/package-lock.json
+!/tsconfig.json
+!/next.config.mjs
+!/postcss.config.mjs
+!/tailwind.config.ts
+!/wrangler.jsonc
+!/open-next.config.ts
+!/Dockerfile
+!/docker-compose.yml
+!/next-env.d.ts
+
+# Build / dependency artifacts
+node_modules/
+.next/
+out/
+.open-next/
+.wrangler/
+npm-debug.log
+.DS_Store
+
+# Local-only env (gitignored on purpose)
+.dev.vars
