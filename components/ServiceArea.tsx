@@ -65,25 +65,24 @@ export default function ServiceArea() {
           transition={{ duration: 0.7 }}
           className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-navy-800"
         >
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(160,138,99,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(160,138,99,0.12)_1px,transparent_1px)] bg-[size:38px_38px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(160,138,99,0.15),transparent_60%)]" />
-          <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0 200 Q 100 120 200 180 T 400 140" fill="none" stroke="rgba(160,138,99,0.5)" strokeWidth="2" strokeDasharray="6 6" />
-            <path d="M40 300 Q 120 220 260 250 T 400 220" fill="none" stroke="rgba(160,138,99,0.3)" strokeWidth="2" />
-          </svg>
-          <motion.div
-            className="absolute left-[46%] top-[42%]"
-            animate={reduce ? {} : { y: [0, -8, 0] }}
-            transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
-          >
-            <span className="relative flex h-4 w-4">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-bronze/60" />
-              <span className="relative inline-flex h-4 w-4 rounded-full bg-bronze ring-4 ring-bronze/30" />
-            </span>
-          </motion.div>
-          <div className="absolute bottom-4 left-4 rounded-xl bg-navy-900/80 px-4 py-2 text-sm text-white backdrop-blur">
-            Al Qanaa Workshop · {business.city}
+          <iframe
+            title="Al Qanaa Electrical Repairing Workshop location map"
+            src={`https://maps.google.com/maps?q=${business.lat},${business.lng}&z=17&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 h-full w-full border-0"
+          />
+          <div className="pointer-events-none absolute bottom-4 left-4 rounded-xl bg-navy-900/85 px-4 py-2 text-xs text-white backdrop-blur">
+            {business.address.split(",")[0]} · {business.city}
           </div>
+          <a
+            href={business.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute right-4 top-4 rounded-full bg-bronze px-3 py-1.5 text-xs font-semibold text-navy-900 shadow-glow transition-transform hover:scale-105"
+          >
+            Directions
+          </a>
         </motion.div>
       </div>
     </section>

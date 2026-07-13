@@ -10,6 +10,10 @@ export const business = {
   city: "Al Ain",
   region: "Abu Dhabi",
   country: "United Arab Emirates",
+  lat: 24.1475964,
+  lng: 55.6919113,
+  mapsUrl:
+    "https://www.google.com/maps/place/Al+QANAA+ELECTRICAL+REPAIRING+WORKSHOP/@24.1475964,55.6919113,17z",
   email: "info@alqanaa-electrical.ae",
   hours: "Sat – Thu, 8:00 AM – 8:00 PM",
 };
