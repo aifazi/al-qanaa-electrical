@@ -1,33 +1,16 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { PhoneIcon, SparkIcon, MaintenanceIcon, CheckIcon } from "@/components/icons";
 
-const steps = [
-  {
-    icon: PhoneIcon,
-    title: "Call or Book",
-    desc: "Reach us on +971 52 327 6374 or book online. Tell us what's not working.",
-  },
-  {
-    icon: SparkIcon,
-    title: "Free Diagnostic",
-    desc: "A certified technician inspects and pinpoints the fault — at no charge.",
-  },
-  {
-    icon: MaintenanceIcon,
-    title: "Expert Repair",
-    desc: "We fix it with genuine parts and code-compliant methods, on the spot.",
-  },
-  {
-    icon: CheckIcon,
-    title: "Warranty & Follow-up",
-    desc: "Every job is backed by our workmanship warranty and a courtesy check-in.",
-  },
-];
+const icons = [PhoneIcon, SparkIcon, MaintenanceIcon, CheckIcon];
 
 export default function Process() {
+  const t = useTranslations();
   const reduce = useReducedMotion();
+  const steps = t.raw("Process.steps") as Array<{ title: string; desc: string }>;
+
   const line = reduce
     ? { hidden: { scaleY: 1 }, visible: { scaleY: 1 } }
     : {
@@ -43,10 +26,10 @@ export default function Process() {
       <div className="container-px mx-auto max-w-4xl">
         <div className="mb-14 text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-bronze">
-            How it works
+            {t("Process.title")}
           </span>
           <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Simple, transparent process
+            {t("Process.subtitle")}
           </h2>
         </div>
 
@@ -60,7 +43,7 @@ export default function Process() {
           />
           <div className="space-y-10">
             {steps.map((s, i) => {
-              const Icon = s.icon;
+              const Icon = icons[i];
               const left = i % 2 === 0;
               return (
                 <motion.div
@@ -86,7 +69,7 @@ export default function Process() {
                     } w-full sm:w-auto`}
                   >
                     <div className="text-xs font-semibold uppercase tracking-widest text-bronze/80">
-                      Step {i + 1}
+                      {t("Process.title")} {i + 1}
                     </div>
                     <h3 className="mt-1 text-xl font-semibold text-white">
                       {s.title}

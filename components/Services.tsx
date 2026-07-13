@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   AcIcon,
   BreakerIcon,
@@ -11,47 +12,24 @@ import {
   CheckIcon,
 } from "@/components/icons";
 
-const services = [
-  {
-    icon: AcIcon,
-    title: "AC Repair & Servicing",
-    desc: "Cooling faults, gas leaks, compressor and control-board issues — diagnosed and fixed fast.",
-    points: ["Split & central units", "Gas refill", "Control board repair"],
-  },
-  {
-    icon: BreakerIcon,
-    title: "Circuit Breakers",
-    desc: "Tripping panels, MCB/RCD failures and load balancing for safe, reliable power.",
-    points: ["Panel upgrades", "RCD fixes", "Load balancing"],
-  },
-  {
-    icon: WiringIcon,
-    title: "Wiring Fixes",
-    desc: "Faulty, exposed or ageing wiring replaced to code — no more flicker or shutdowns.",
-    points: ["Rewiring", "Fault tracing", "Safety upgrades"],
-  },
-  {
-    icon: ApplianceIcon,
-    title: "Appliance Repair",
-    desc: "Washing machines, fridges, ovens and more — component-level repair, not just swaps.",
-    points: ["All major brands", "Board-level work", "Genuine parts"],
-  },
-  {
-    icon: EmergencyIcon,
-    title: "Emergency Callout",
-    desc: "Power outages and electrical hazards handled same-day across Al Ain & Abu Dhabi.",
-    points: ["Same-day response", "24/7 hazards", "No hidden fees"],
-  },
-  {
-    icon: MaintenanceIcon,
-    title: "Maintenance Plans",
-    desc: "Scheduled inspections that prevent breakdowns and keep your systems certified.",
-    points: ["Annual contracts", "Priority slots", "Compliance reports"],
-  },
+const icons = [
+  AcIcon,
+  BreakerIcon,
+  WiringIcon,
+  ApplianceIcon,
+  EmergencyIcon,
+  MaintenanceIcon,
 ];
 
 export default function Services() {
+  const t = useTranslations();
   const reduce = useReducedMotion();
+  const services = t.raw("Services.items") as Array<{
+    title: string;
+    desc: string;
+    points: string[];
+  }>;
+
   const grid = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.1 } },
@@ -72,15 +50,12 @@ export default function Services() {
       <div className="container-px mx-auto max-w-7xl">
         <div className="mb-14 max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-bronze">
-            What we fix
+            {t("Nav.services")}
           </span>
           <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Expert electrical &amp; appliance repair
+            {t("Services.title")}
           </h2>
-          <p className="mt-4 text-lg text-white/65">
-            From a single socket to a full panel, our technicians handle it all
-            with precision tools and honest diagnostics.
-          </p>
+          <p className="mt-4 text-lg text-white/65">{t("Services.intro")}</p>
         </div>
 
         <motion.div
@@ -90,8 +65,8 @@ export default function Services() {
           viewport={{ once: true, margin: "-60px" }}
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {services.map((s) => {
-            const Icon = s.icon;
+          {services.map((s, idx) => {
+            const Icon = icons[idx];
             return (
               <motion.article
                 key={s.title}

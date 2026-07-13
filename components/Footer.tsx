@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { business } from "@/lib/business";
 import {
   PhoneIcon,
@@ -10,12 +11,12 @@ import {
 } from "@/components/icons";
 import Stars from "@/components/Stars";
 
-const quickLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why" },
-  { label: "Process", href: "#process" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Service Area", href: "#area" },
+const quickLinkKeys = [
+  { key: "services", href: "#services" },
+  { key: "why", href: "#why" },
+  { key: "process", href: "#process" },
+  { key: "reviews", href: "#reviews" },
+  { key: "area", href: "#area" },
 ];
 
 const socials = [
@@ -25,6 +26,7 @@ const socials = [
 ];
 
 export default function Footer() {
+  const t = useTranslations();
   const reduce = useReducedMotion();
   const item = reduce
     ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
@@ -44,27 +46,27 @@ export default function Footer() {
                   <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
                 </svg>
               </span>
-              <span className="font-display text-lg font-bold">{business.shortName}</span>
+              <span className="font-display text-lg font-bold">{t("Brand.name")}</span>
             </div>
-            <p className="mt-4 text-sm text-white/60">
-              {business.tagline}. Trusted electrical &amp; appliance repair across{" "}
-              {business.city} and {business.region}.
-            </p>
+            <p className="mt-4 text-sm text-white/60">{t("Footer.tagline")}</p>
             <div className="mt-4 inline-flex items-center gap-2">
               <Stars rating={business.rating} showValue size={16} />
-              <span className="text-xs text-white/55">{business.reviews}+ reviews</span>
+              <span className="text-xs text-white/55">{business.reviews}+ {t("Common.reviews")}</span>
             </div>
           </motion.div>
 
           <motion.div variants={item} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-bronze">
-              Quick Links
+              {t("Footer.quickLinks")}
             </h3>
             <ul className="mt-4 space-y-2">
-              {quickLinks.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-sm text-white/65 transition-colors hover:text-bronze">
-                    {l.label}
+              {quickLinkKeys.map((l) => (
+                <li key={l.key}>
+                  <a
+                    href={l.href}
+                    className="text-sm text-white/65 transition-colors hover:text-bronze"
+                  >
+                    {t(`Nav.${l.key}`)}
                   </a>
                 </li>
               ))}
@@ -73,7 +75,7 @@ export default function Footer() {
 
           <motion.div variants={item} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-bronze">
-              Contact
+              {t("Footer.contact")}
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li>
@@ -88,7 +90,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <ClockIcon className="h-4 w-4 text-bronze" />
-                {business.hours}
+                {t("Area.hours")}
               </li>
               <li>
                 <a href={`mailto:${business.email}`} className="flex items-center gap-2 hover:text-bronze">
@@ -101,7 +103,7 @@ export default function Footer() {
 
           <motion.div variants={item} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-bronze">
-              Follow
+              {t("Footer.follow")}
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {socials.map((s) => (
@@ -119,14 +121,18 @@ export default function Footer() {
               className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-bronze px-5 py-3 text-sm font-semibold text-navy-900 shadow-glow transition-transform hover:scale-[1.03] active:scale-95"
             >
               <PhoneIcon className="h-4 w-4" />
-              Call Now
+              {t("Common.callNow")}
             </a>
           </motion.div>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/45">
-          © {new Date().getFullYear()} {business.name}. All rights reserved. ·
-          Serving {business.city}, {business.region}, {business.country}.
+          {t("Footer.rights", {
+            year: new Date().getFullYear(),
+            city: business.city,
+            region: business.region,
+            country: business.country,
+          })}
         </div>
       </div>
     </footer>

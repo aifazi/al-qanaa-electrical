@@ -3,13 +3,13 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { business } from "@/lib/business";
 import { PhoneIcon, SparkIcon } from "@/components/icons";
 import Stars from "@/components/Stars";
 
-const headline = ["Free", "Diagnostic", "Check.", "Every", "Appliance."];
-
 export default function Hero() {
+  const t = useTranslations();
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -36,6 +36,8 @@ export default function Hero() {
           transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] },
         },
       };
+
+  const headline = t.raw("Hero.headline") as string[];
 
   return (
     <section
@@ -74,7 +76,7 @@ export default function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-bronze/30 bg-bronze/10 px-4 py-1.5 text-sm font-medium text-bronze-100 backdrop-blur"
           >
             <SparkIcon className="h-4 w-4 text-bronze" />
-            {business.tagline}
+            {t("Hero.tagline")}
           </motion.div>
 
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
@@ -91,9 +93,7 @@ export default function Hero() {
             variants={word}
             className="mt-6 max-w-xl text-lg text-white/75"
           >
-            Al Qanaa Electrical Repairing Workshop delivers expert AC repair,
-            circuit breaker fixes and wiring solutions across {business.city} &amp;{" "}
-            {business.region}. Trusted by 200+ homes and businesses.
+            {t("Hero.subtitle")}
           </motion.p>
 
           <motion.div
@@ -105,13 +105,13 @@ export default function Hero() {
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-bronze px-7 py-4 text-base font-semibold text-navy-900 shadow-glow transition-all duration-300 hover:scale-[1.04] hover:bg-bronze-300 active:scale-95"
             >
               <PhoneIcon className="h-5 w-5 transition-transform group-hover:rotate-6" />
-              Call {business.phone}
+              {t("Common.call")} {business.phone}
             </a>
             <a
               href="#contact"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:scale-[1.04] hover:border-bronze/60 hover:bg-white/5 active:scale-95"
             >
-              Book Free Diagnostic
+              {t("Hero.bookCta")}
             </a>
           </motion.div>
 
@@ -127,12 +127,14 @@ export default function Hero() {
                 <div className="text-sm font-bold text-white">
                   {business.rating.toFixed(1)}
                 </div>
-                <div className="text-xs text-white/60">Google Rating</div>
+                <div className="text-xs text-white/60">
+                  {t("Common.googleRating")}
+                </div>
               </div>
             </motion.div>
             <div className="text-sm text-white/60">
               <span className="font-semibold text-white">{business.reviews}+</span>{" "}
-              reviews
+              {t("Common.reviews")}
             </div>
           </motion.div>
         </motion.div>

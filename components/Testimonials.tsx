@@ -1,57 +1,31 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Stars from "@/components/Stars";
 
-const reviews = [
-  {
-    name: "Ahmed R.",
-    location: "Al Ain",
-    text: "Called about a tripping breaker — they diagnosed it free and fixed it the same day. Honest and fast.",
-  },
-  {
-    name: "Layla M.",
-    location: "Zakhir",
-    text: "My AC stopped cooling in July. Al Qanaa traced it to the control board and saved me a full replacement.",
-  },
-  {
-    name: "Saeed K.",
-    location: "Ramlat Zakher",
-    text: "Professional from start to finish. Clear quote in AED, no surprises. Highly recommend.",
-  },
-  {
-    name: "Fatima A.",
-    location: "Abu Dhabi",
-    text: "Emergency callout for a wiring fault. Arrived within the hour and made it safe immediately.",
-  },
-  {
-    name: "Yousef H.",
-    location: "Al Ain",
-    text: "Maintenance plan keeps our shop compliant. Priority slots are a lifesaver during peak season.",
-  },
-  {
-    name: "Mariam T.",
-    location: "Zakhir",
-    text: "Repaired my washing machine board instead of pushing a new one. Saved me a lot of money.",
-  },
-];
-
 export default function Testimonials() {
+  const t = useTranslations();
   const reduce = useReducedMotion();
+  const reviews = t.raw("Reviews.items") as Array<{
+    name: string;
+    location: string;
+    text: string;
+  }>;
   const loop = reduce ? [] : [...reviews, ...reviews];
 
   return (
     <section id="reviews" className="section-pad relative overflow-hidden">
       <div className="container-px mx-auto mb-12 max-w-7xl text-center">
         <span className="text-sm font-semibold uppercase tracking-[0.2em] text-bronze">
-          Reviews
+          {t("Nav.reviews")}
         </span>
         <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Loved by 200+ customers
+          {t("Reviews.title")}
         </h2>
         <div className="mt-4 flex items-center justify-center gap-2">
           <Stars rating={4.9} showValue />
-          <span className="text-sm text-white/60">4.9 on Google</span>
+          <span className="text-sm text-white/60">{t("Reviews.onGoogle")}</span>
         </div>
       </div>
 

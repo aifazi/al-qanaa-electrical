@@ -16,7 +16,8 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #0a1326 0%, #0f1b33 60%, #16264a 100%)",
+          background:
+            "linear-gradient(135deg, #0a1326 0%, #0f1b33 60%, #16264a 100%)",
           color: "white",
           fontFamily: "sans-serif",
         }}
@@ -66,8 +67,12 @@ export default function OpengraphImage() {
           }}
         >
           <span style={{ color: "#c9a24b" }}>4.9 / 5</span>
-          <span style={{ color: "rgba(255,255,255,0.7)" }}>· 200+ Google reviews</span>
-          <span style={{ color: "rgba(255,255,255,0.7)" }}>· +971 52 327 6374</span>
+          <span style={{ color: "rgba(255,255,255,0.7)" }}>
+            · 200+ Google reviews
+          </span>
+          <span style={{ color: "rgba(255,255,255,0.7)" }}>
+            · +971 52 327 6374
+          </span>
         </div>
       </div>
     ),
